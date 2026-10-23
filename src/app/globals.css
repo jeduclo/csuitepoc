@@ -1,0 +1,76 @@
+/* src/app/globals.css */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap');
+
+@import "tailwindcss";
+
+@theme {
+  --color-navy: #0A1628;
+  --color-navy-card: #1A3560;
+  --color-navy-border: #1E3A6E;
+  --color-signal-blue: #1E6FE8;
+  --color-signal-green: #3DA882;
+  --color-signal-amber: #F59E0B;
+  --color-signal-red: #C95555;
+  --color-signal-muted: #A0B4CC;
+  --font-sans: "Inter", ui-sans-serif, system-ui;
+  --font-mono: "JetBrains Mono", ui-monospace, monospace;
+}
+
+@layer base {
+  body {
+    background-color: var(--color-navy);
+    color: var(--color-signal-muted);
+  }
+  h1, h2, h3 {
+    color: white;
+  }
+}
+
+@layer components {
+  .card {
+    background-color: var(--color-navy-card);
+    border: 1px solid var(--color-navy-border);
+    border-radius: 0.75rem;
+    padding: 1rem;
+  }
+  .metric {
+    font-family: var(--font-mono);
+    font-weight: 500;
+    color: white;
+  }
+}
+
+/* Slider thumb styling — cross-browser */
+input[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background: white;
+  cursor: pointer;
+  box-shadow: 0 0 0 2px rgba(30, 111, 232, 0.4);
+  transition: box-shadow 0.15s ease;
+}
+
+input[type="range"]::-webkit-slider-thumb:hover {
+  box-shadow: 0 0 0 4px rgba(30, 111, 232, 0.3);
+}
+
+input[type="range"]::-moz-range-thumb {
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background: white;
+  cursor: pointer;
+  border: none;
+  box-shadow: 0 0 0 2px rgba(30, 111, 232, 0.4);
+}
+
+input[type="range"] {
+  -webkit-appearance: none;
+  appearance: none;
+  height: 6px;
+  border-radius: 4px;
+  outline: none;
+}
